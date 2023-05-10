@@ -1,4 +1,3 @@
-
 public class financialManager {
    
     public void vadility(){
@@ -10,4 +9,3 @@ public class financialManager {
         return true;
     }
 }
-

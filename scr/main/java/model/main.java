@@ -8,34 +8,45 @@ public class main {
         // manager
         Manager manager = new Manager();
         manager.setName("Gill Bates");
+        // financial manager
+        FinancialManager financialManager = new FinancialManager();
+        financialManager.setName("Kim Took");
         // trainee
         Trainee traineeTemp = new Trainee();
         traineeTemp.setName("Kalana");
 
-        // lodge enquiry scenario
-        lodgeEnquiryScenario(manager, traineeTemp);
+        // refund scenario
+        requestForRefund(financialManager, traineeTemp);
 
-        // requestForRefund();
+        // lodge enquiry scenario
+        // lodgeEnquiryScenario(manager, traineeTemp);
 
     }
 
-    // public static void requestForRefund() {
-    // Scanner scan = new Scanner(System.in);
-    // String traineeName, traineeID;
-    // double feepaid, refundAmount;
+    public static void requestForRefund(FinancialManager fm, Trainee trainee) {
 
-    // financialManager refund = new financialManager();
-    // refund.vadility();
-    // System.out.println(
-    // "\"The refund can only be processed if you cancel the training 24 hours
-    // before the first session\"");
-    // System.out.print("Please enter your name: ");
-    // traineeName = scan.nextLine();
-    // System.out.print("Please enter your ID: ");
-    // traineeID = scan.nextLine();
-    // System.out.print("");
+        // create dummy training session where trainee enrolled in for this scenario
+        TrainingSession trainingSession = new TrainingSession();
+        trainingSession.setCommenceTime("15:00 16/05/2023");
 
-    // }
+        // set trainee payment method for refunds
+        Payment traineePayment = new Payment();
+        trainee.setPayment(traineePayment);
+
+        // trainee requests for refund by passing the training session trainee enrolled
+        // in
+        trainee.requestRefund(trainingSession);
+
+        // add request into arraylist of requests in FinancialManager class
+        fm.addRefundToList(trainee.getRefundRequest());
+
+        // trainee finished requesting refunding and is waiting for financial manager to
+        // reply
+
+        // financial manager handles refunds
+        fm.processRefunds();
+
+    }
 
     public static void lodgeEnquiryScenario(Manager manager, Trainee trainee) {
 

@@ -24,13 +24,18 @@ public class FinancialManager extends Person {
 
         // financial manager iterates through all requests and handles them
         for (Refund rr : refundRequests) {
+
             // gets the commence date of the training session the current request is
             // associated to
-            String commenseTimeString = rr.getTrainingSession().getCommenceTime();
+            TrainingSession tempTrainingSession = rr.getTrainingSession();
+            String commenseTimeString = tempTrainingSession.getCommenceTime();
+
+            // gets trainee details
+            Trainee tempTrainee = rr.getTrainee();
 
             // manager checks if the gap between commence time and current time is less than
             // 24hrs
-            System.out.println("Student Name: " + rr.getTrainee().getName());
+            System.out.println("Student Name: " + tempTrainee.getName());
             System.out.println("Requested Time: " + rr.getRequestedTime());
             System.out.println("First Class Commense Time: " + commenseTimeString);
 
@@ -48,7 +53,7 @@ public class FinancialManager extends Person {
                 // set refund fee
                 double refundFee = 12900;
                 // make refund transaction
-                Payment studentPayment = rr.getTrainee().getPayment();
+                Payment studentPayment = tempTrainee.getPayment();
 
                 studentPayment.makeRefundTransaction(refundFee);
 

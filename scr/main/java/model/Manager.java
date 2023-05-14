@@ -6,7 +6,7 @@ public class Manager extends Person {
     public Manager() {
     }
 
-    public void repondToEnquiry(Enquiry eq) {
+    public void processEnquiry(Enquiry eq) {
 
         Scanner scan = new Scanner(System.in);
         String reply = "";
@@ -26,6 +26,8 @@ public class Manager extends Person {
         System.out.println("");
 
         eq.setReply(reply);
+
+        eq.notifyResponse();
 
     }
 }

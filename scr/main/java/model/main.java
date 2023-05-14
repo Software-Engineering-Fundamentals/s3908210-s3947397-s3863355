@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class main {
 
@@ -25,11 +24,11 @@ public class main {
 
     public static void requestForRefund(FinancialManager fm, Trainee trainee) {
 
-        // create dummy training session where trainee enrolled in for this scenario
+        // create dummy training session where trainee is enrolled in for this scenario
         TrainingSession trainingSession = new TrainingSession();
         trainingSession.setCommenceTime("15:00 16/05/2023");
 
-        // set trainee payment method for refunds
+        // set trainee payment method to transfer money for refund
         Payment traineePayment = new Payment();
         trainee.setPayment(traineePayment);
 
@@ -55,9 +54,16 @@ public class main {
         // trainee makes enquiry
         enquiryTrackingID = trainee.lodgeEnquiry();
 
+        // manager gets all enquires
+        // enquiryList[] = manager.getAllGeneralEnquiries();
+        /*
+         * NOTE: we have stored all the enquires in Enquiry class for the purposes of
+         * the demonstration, in the proper implementation all the enquires would be
+         * stored in a database.
+         */
         // manager replies by iterating through all enquires
         for (Enquiry eq : Enquiry.enquiryList) {
-            manager.repondToEnquiry(eq);
+            manager.processEnquiry(eq);
         }
 
         // trainee views response by iterating over all enquires and matching IDs

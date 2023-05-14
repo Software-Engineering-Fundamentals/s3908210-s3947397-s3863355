@@ -13,7 +13,6 @@ public class Trainee extends Person {
     public void requestRefund(TrainingSession trainingSes) {
 
         System.out.println("---REQUESTING REFUND AS TRAINEE---");
-        Scanner scan = new Scanner(System.in);
 
         // create refund obj
         Refund refund = new Refund();

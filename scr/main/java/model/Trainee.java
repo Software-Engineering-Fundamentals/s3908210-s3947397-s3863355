@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
 public class Trainee extends Person {
-    protected String registrationID;
-    protected String password;
-    protected String[] enrolledCourses;
-    protected Refund refundRequest;
-    protected Payment payment;
+    private String registrationID;
+    private String password;
+    private String[] enrolledCourses;
+    private Refund refundRequest;
+    private Payment payment;
 
     public Trainee() {
     }

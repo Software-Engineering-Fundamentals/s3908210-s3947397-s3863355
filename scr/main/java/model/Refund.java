@@ -1,9 +1,9 @@
 public class Refund {
-    protected boolean validation;
-    protected double refundAmount;
-    protected Trainee trainee;
-    protected TrainingSession trainingSession;
-    protected String requestedTime;
+    private boolean validation;
+    private double refundAmount;
+    private Trainee trainee;
+    private TrainingSession trainingSession;
+    private String requestedTime;
 
     public void notifyRefundStatus() {
         System.out.println("---VIEW NOTIFICATION AS TRAINEE---");

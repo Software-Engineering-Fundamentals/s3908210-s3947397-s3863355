@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class FinancialManager extends Person {
 
-    protected ArrayList<Refund> refundRequests = new ArrayList<>();
+    private ArrayList<Refund> refundRequests = new ArrayList<>();
 
     public FinancialManager() {
     }

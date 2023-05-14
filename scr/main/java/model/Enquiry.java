@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
 public class Enquiry {
-    String generalEnquiry;
-    String ITIssue;
-    String trackingID;
-    String type;
-    String reply;
+    private String generalEnquiry;
+    private String ITIssue;
+    private String trackingID;
+    private String type;
+    private String reply;
 
     // to keep track of all enquiries for purpose of this skeleton code.
     // will not add this as an attribute of Enquiry class in final model.

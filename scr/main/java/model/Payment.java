@@ -1,5 +1,5 @@
 public class Payment {
-    private String paymentDetails;
+    protected String paymentDetails;
     private String paymentMethod;
 
     public Payment() {

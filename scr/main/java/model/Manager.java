@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Manager extends Person {
-    String addressEnquiry;
+    private String addressEnquiry;
 
     public Manager() {
     }

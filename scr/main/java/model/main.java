@@ -3,14 +3,13 @@ public class main {
 
     public static void main(String[] args) {
 
-        // create actors
-        // manager
+        // create dummy actors
         Manager manager = new Manager();
         manager.setName("Gill Bates");
-        // financial manager
+
         FinancialManager financialManager = new FinancialManager();
         financialManager.setName("Kim Took");
-        // trainee
+
         Trainee traineeTemp = new Trainee();
         traineeTemp.setName("Kalana");
 
@@ -18,17 +17,17 @@ public class main {
         requestForRefund(financialManager, traineeTemp);
 
         // lodge enquiry scenario
-        // lodgeEnquiryScenario(manager, traineeTemp);
+        lodgeEnquiryScenario(manager, traineeTemp);
 
     }
 
-    public static void requestForRefund(FinancialManager fm, Trainee trainee) {
+    public static void requestForRefund(FinancialManager financialManager, Trainee trainee) {
 
         // create dummy training session where trainee is enrolled in for this scenario
         TrainingSession trainingSession = new TrainingSession();
         trainingSession.setCommenceTime("15:00 16/05/2023");
 
-        // set trainee payment method to transfer money for refund
+        // create dummy payment class for payment method to transfer money for refund
         Payment traineePayment = new Payment();
         trainee.setPayment(traineePayment);
 
@@ -37,13 +36,13 @@ public class main {
         trainee.requestRefund(trainingSession);
 
         // add request into arraylist of requests in FinancialManager class
-        fm.addRefundToList(trainee.getRefundRequest());
+        financialManager.addRefundToList(trainee.getRefundRequest());
 
         // trainee finished requesting refunding and is waiting for financial manager to
         // reply
 
         // financial manager handles refunds
-        fm.processRefunds();
+        financialManager.processRefunds();
 
     }
 

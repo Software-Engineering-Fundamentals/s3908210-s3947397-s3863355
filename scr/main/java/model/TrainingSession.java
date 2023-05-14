@@ -1,6 +1,8 @@
 public class TrainingSession {
-    protected int classNumber;
-    protected String commenceTime;
+    private int classNumber;
+    protected String classLocation;
+    private Trainee[] studetns;
+    private String commenceTime;
 
     // setters and getters
     public int getClassNumber() {
